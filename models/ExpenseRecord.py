@@ -4,8 +4,8 @@ from dataclasses_json import dataclass_json
 from models.ExpenseData import ExpenseData
 
 
-@dataclass
 @dataclass_json
+@dataclass
 class ExpenseRecord:
     datetime: int
     debitData: ExpenseData

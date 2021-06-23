@@ -56,5 +56,13 @@ class SQLiteDatabaseService(DatabaseService):
                 cur.execute(query, parameter)
             else:
                 cur.execute(query)
-            print(cur.fetchall())
-        return []
+
+            # cur.descriptionに列名、cur.fetchall()で実データが取れるので、変換する
+            column_list: List[str] = [x[0] for x in cur.description]
+            output: List[Dict[str, any]] = []
+            for record in cur.fetchall():
+                temp = {}
+                for key, val in zip(column_list, record):
+                    temp[key] = val
+                output.append(temp)
+        return output
