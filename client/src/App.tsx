@@ -19,6 +19,7 @@ const App: React.VFC = () => {
     },
     shop: 'コンビニ',
     comment: 'ジュース、菓子',
+    isApplyed: false,
   },
   {
     datetime: 1624546800,
@@ -34,7 +35,25 @@ const App: React.VFC = () => {
     },
     shop: '賃貸住宅',
     comment: '',
-  }];
+    isApplyed: false,
+  },
+  {
+    datetime: 1624596780,
+    debitData: {
+      type: '旅費交通費',
+      name: '電車賃',
+      amount: 1000,
+    },
+    creditData: {
+      type: '現金',
+      name: '現金',
+      amount: 1000,
+    },
+    shop: '鉄道会社',
+    comment: '駅A⇔駅B',
+    isApplyed: true,
+  }
+  ];
 
   return (
     <Container>

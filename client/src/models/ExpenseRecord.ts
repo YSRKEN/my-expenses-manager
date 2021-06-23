@@ -10,6 +10,8 @@ interface ExpenseRecord {
   creditData: ExpenseData;
   // 店舗名
   shop: string;
+  // 経費申請できるならtrue
+  isApplyed: boolean;
   // コメント
   comment: string;
 }
